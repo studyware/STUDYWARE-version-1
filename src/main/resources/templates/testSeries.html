@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>STUDYWARE &mdash;</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"> -->
+    <link rel="stylesheet" th:href="@{/fonts/icomoon/style.css}"/>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}"/>
+    
+
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.min.css}"/>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.css}"/>
+
+    <link rel="stylesheet" th:href="@{/fonts/flaticon/font/flaticon.css}"/>
+
+    <link rel="stylesheet" th:href="@{/css/aos.css}"/>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    
+      <script type="text/javascript">
+      window.onload=function(){ 
+    	    
+    	    window.setTimeout(function() { redirect(); }, 5000);
+    	};
+
+    	function redirect() {
+    	    document.testform.submit();
+    	}
+    </script>    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"  th:object="${userTest}">
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+        <a class="site-navbar-brand" href="#">
+       <!--    <img th:src="@{/images/logo.png}" alt="Logo" style="width:100px;height:100px;"> -->
+        </a>
+      
+          <div class="site-logo mr-auto w-25"><a href="index.html">STUDY WARE</a></div>
+
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+               
+               
+              </ul>
+            </nav>
+          </div>
+
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <li class="cta"><a th:href="@{/}" class="nav-link"><span>Home</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="intro-section single-cover" id="home-section">
+      
+      <div class="slide-1 " style="background-image: url('images/kalam.jpg');" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <div class="row justify-content-center align-items-center text-center">
+                 <div class="col-lg-6">
+                   <h1 data-aos="fade-up" data-aos-delay="0" th:text="${userTest.testname}">Test Name</h1>
+                 <nobr> <p data-aos="fade-up" data-aos-delay="100" > Class &nbsp;<Span th:text="${userTest.grade}"></Span></p></nobr>
+                  <nobr><p data-aos="fade-up" data-aos-delay="100" > Marks &nbsp;<Span th:text="${userTest.total_marks}"></Span></p></nobr>
+                </div> 
+
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+              
+    <div class="col-md-10 mx-auto">
+     <form action="" id="testform" th:action="@{/evaluate}" method="post" class="form-box">
+     
+      	<div class="form-group row p-4 rounded bg-white why-choose-us-box">
+                    <div class="col-sm-3">
+                        <label for="inputTestname">username</label>
+                        <input type="text" class="form-control"  th:field="*{username}" id="inputFirstname" placeholder="Please enter your Name" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="inputHostname">Email</label>
+                        <input type="email" class="form-control" th:field="*{email}" id="inputLastname" placeholder="email" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inputHostname">Mobile Number</label>
+                        
+                        <input type="text" class="form-control" th:field="*{mobile}" id="inputLastname" placeholder="Mobile Number" required>
+                    </div>
+                </div>
+	       	
+     	<div th:each="quest,i : ${userTest.questions}">  
+       		
+       		<!--  -->
+       	<div class="p-4 rounded bg-white why-choose-us-box">
+       		<div class="form-group row ">
+			     <div class="col-sm-12">
+			      <label for="inputTestname" th:text ="${i.index +1}"></label>
+			         <label for="inputTestname" th:text="${quest.question}">Question ?</label>
+				</div>
+	       	</div>
+	       	
+	       	<!-- option -->
+	       	
+	       		
+       		 <div class="form-group row">
+			     <div class="col-sm-8">
+			  	   <div class="form-group row">
+			  	    <label for="inputTestname" th:text ="A_"></label><span> &nbsp; </span>
+			  		<label for="inputTestname" th:text="${quest.option_1}">option 1</label>
+			  		</div>	
+			  		<div class="form-group row">
+			  		<label for="inputTestname" th:text ="B_">b </label><span> &nbsp; </span>
+			  		<label for="inputTestname" th:text="${quest.option_2}">option 1</label>
+			  		</div>
+			  		<div class="form-group row">
+			  		<label for="inputTestname" th:text ="C_">c </label><span> &nbsp; </span>
+			  		<label for="inputTestname" th:text="${quest.option_3}">option 1</label>
+			  		</div>
+			  		<div class="form-group row">
+			  		<label for="inputTestname" th:text ="D_"> d </label><span> &nbsp; </span>
+			  		<label for="inputTestname" th:text="${quest.option_4}">option 1</label>
+			  		</div>
+				</div>
+				
+				<div class="col-sm-4">
+				  <select class="form-control" th:field="*{questions[__${i.index}__].user_answer}" id="user_answer" required>
+						     <option th:value="a" th:text="${quest.option_1}"></option>
+						    <option th:value="b" th:text="${quest.option_2}"></option>
+						     <option th:value="c" th:text="${quest.option_3}"></option>
+						     <option th:value="d" th:text="${quest.option_4}"></option>
+						     <option th:value="x" th:text="Not_Answer"></option>
+						     
+
+				</select> 
+				</div>
+	       	</div>
+	       	
+	       	</div>
+	      
+	       	<hr>
+            
+		</div> 
+		<div class="form-group">
+                      <input type="submit" name="answer" class="btn btn-primary btn-pill" value="Submit Test">
+             </div>
+			
+           </form> 
+       	 </div>
+        </div>
+   
+    
+    
+    
+   
+   
+              
+
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div> 
+
+    
+     
+   <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+      
+      <div class="row">
+		    <div class="col">
+		      	    
+		            <h2 class="section-title mb-3">Reach Us</h2>
+		            <p class="mb-5">36/1 sachidhanandham street<br>Kosapet<br>Purasaiwalkam<br>Chennai 600012<br>studywareofficial@gmail.com</p>
+		    </div>
+		    
+		    <div class="col">
+		     Call us
+		              <p class="mb-5"><a href="tel:+918939464653"><button href="" type="button" class="btn btn-outline-info">+91-8939464653</button></a>  <a href="tel:+919789904992"><button href="" type="button" class="btn btn-outline-info">+91-9789904992</button></a><br></p>
+		              
+		              
+					
+		    </div>
+  </div>
+      
+      
+     <div class="row">
+		<!--   <div class="col-12 col-md-8"> <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0559841317786!2d80.25384521388479!3d13.095638490774578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52652eae17f753%3A0x225ffdb216f1b38c!2sMr.%20Science%20education%20centre!5e0!3m2!1sen!2sin!4v1596337783592!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div></div> -->
+		  <div class="col-8 col-md-8">
+		    
+		            <h2 class="section-title mb-3" style="color:black;font-family: 'Playfair Display', serif;">Follow Us On</h2>
+			  <a href="https://twitter.com/Studyware_?s=08"> <img src="images/twt.png" alt="twitter" width="50" height="50"></a>
+			<!-- <br><br> --><a href="https://www.instagram.com/studyware_official?r=nametag"> <img src="images/ins.png" alt="instagram" width="60" height="60"></a>
+			  <!--  <br><br> --> <a href="https://www.facebook.com/Studyware-107124711331900/?ti=as"> <img src="images/fb.png" alt="fb" width="50" height="50"></a>
+			 <!-- <br><br> --> <a href="https://api.whatsapp.com/send?phone=918939464653"> <img src="images/wp.png" alt="fb" width="60" height="60"></a>
+			  <!-- <br><br>  --><a href="https://goo.gl/maps/hfdY8aAGSL2e1AUf6"> <img src="images/gm.png" alt="fb" width="50" height="50"></a>
+		 		 
+		  </div>
+		</div>
+
+        
+          </div>
+         
+      </div>
+    </div>
+    
+     
+    <footer class="footer-section bg-white">
+      <div class="container">
+        <div class="row">
+        
+        
+       
+			 
+					
+        
+        </div>
+        
+         
+
+        </div>
+
+       
+    </footer>
+
+  
+    
+  </div> <!-- .site-wrap -->
+
+  <script th:src="@{/js/jquery-3.3.1.min.js}"/>
+  <script th:src="@{/js/jquery-migrate-3.0.1.min.js}"></script>
+  <script th:src="@{/js/jquery-ui.js}"></script>
+  <script th:src="@{/js/popper.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/js/jquery.stellar.min.js}"></script>
+  <script th:src="@{/js/jquery.countdown.min.js}"></script>
+  <script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+  <script th:src="@{/js/jquery.easing.1.3.js}"></script>
+  <script th:src="@{/js/aos.js}"></script>
+  <script th:src="@{/js/jquery. fancybox.min.js}"></script>
+  <script th:src="@{/js/jquery.sticky.js}"></script>
+   <script th:src="@{/js/timer.js}"></script>
+
+  
+  <script th:src="@{/js/main.js}"></script>
+  
+ 
+  
+  
+  
+  
+    
+  </body>
+</html>

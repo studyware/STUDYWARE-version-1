@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>STUDYWARE &mdash; </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"> -->
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" >
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+        <a class="site-navbar-brand" href="#">
+        </a>
+          <div class="site-logo mr-auto w-25"><a href="index.html">STUDY WARE </a></div>
+
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+               
+              </ul>
+            </nav>
+          </div>
+
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <li class="cta"><a th:href="@{/}" class="nav-link"><span>Home</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="intro-section single-cover" id="home-section">
+      
+      <div class="slide-1 " style="background-image: url('images/kalam.jpg');" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <div class="row justify-content-center align-items-center text-center">
+           <!--      <img src="images/SWLOGO.png" alt="Logo"  align="left" style="width:400px;height:150px;"> -->
+            <h1 data-aos="fade-up" data-aos-delay="0">Delete Test</h1>
+                <div class="col-lg-6">
+                </div>
+
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+      <!--  this is user creation -->
+              
+              
+   
+    
+    
+    
+   <!--  this is test creation -->
+     <div class="site-section"  id ="create-test">
+      <div class="container-fluid">
+      
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <form action=""  th:action="@{/deleteTest}" th:object="${name}" method="post" class="form-box">
+            <h3 class="h4 text-black mb-4">Enter Test Name</h3>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputTestname">Test name</label>
+                        <input type="text" class="form-control"  th:field="*{id}" id="inputFirstname" placeholder="Test name" required>
+                    </div>
+                   
+                </div>
+                    <input type="submit" class="btn btn-primary btn-pill" value="Delete Test">
+                    </div>
+            </form>
+        </div>
+    </div>
+
+	</div>
+      </div>
+    </div>
+              
+
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div> 
+
+    
+   <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+      
+      <div class="row">
+		    <div class="col">
+		      	    
+		            <h2 class="section-title mb-3">Reach Us</h2>
+		            <p class="mb-5">36/1 sachidhanandham street<br>Kosapet<br>Purasaiwalkam<br>Chennai 600012<br>studywareofficial@gmail.com</p>
+		    </div>
+		    
+		    <div class="col">
+		     Call us
+		              <p class="mb-5"><a href="tel:+918939464653"><button href="" type="button" class="btn btn-outline-info">+91-8939464653</button></a>  <a href="tel:+919789904992"><button href="" type="button" class="btn btn-outline-info">+91-9789904992</button></a><br></p>
+		              
+		              
+					
+		    </div>
+  </div>
+      
+      
+       <div class="row">
+		<!--   <div class="col-12 col-md-8"> <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0559841317786!2d80.25384521388479!3d13.095638490774578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52652eae17f753%3A0x225ffdb216f1b38c!2sMr.%20Science%20education%20centre!5e0!3m2!1sen!2sin!4v1596337783592!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div></div> -->
+		  <div class="col-8 col-md-8">
+		    
+		            <h2 class="section-title mb-3" style="color:black;font-family: 'Playfair Display', serif;">Follow Us On</h2>
+			  <a href="https://twitter.com/Studyware_?s=08"> <img src="images/twt.png" alt="twitter" width="50" height="50"></a>
+			<!-- <br><br> --><a href="https://www.instagram.com/studyware_official?r=nametag"> <img src="images/ins.png" alt="instagram" width="60" height="60"></a>
+			  <!--  <br><br> --> <a href="https://www.facebook.com/Studyware-107124711331900/?ti=as"> <img src="images/fb.png" alt="fb" width="50" height="50"></a>
+			 <!-- <br><br> --> <a href="https://api.whatsapp.com/send?phone=918939464653"> <img src="images/wp.png" alt="fb" width="60" height="60"></a>
+			  <!-- <br><br>  --><a href="https://goo.gl/maps/hfdY8aAGSL2e1AUf6"> <img src="images/gm.png" alt="fb" width="50" height="50"></a>
+		 		 
+		  </div>
+		</div>
+
+        
+          </div>
+         
+      </div>
+    </div>
+    
+     
+    <footer class="footer-section bg-white">
+      <div class="container">
+        <div class="row">
+        
+        
+       
+			 
+					
+        
+        </div>
+        
+         
+
+        </div>
+
+       
+      </div>
+    </footer>
+
+  
+    
+  </div> <!-- .site-wrap -->
+
+  <script th:src="@{/js/jquery-3.3.1.min.js}"/>
+  <script th:src="@{/js/jquery-migrate-3.0.1.min.js}"></script>
+  <script th:src="@{/js/jquery-ui.js}"></script>
+  <script th:src="@{/js/popper.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/js/jquery.stellar.min.js}"></script>
+  <script th:src="@{/js/jquery.countdown.min.js}"></script>
+  <script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+  <script th:src="@{/js/jquery.easing.1.3.js}"></script>
+  <script th:src="@{/js/aos.js}"></script>
+  <script th:src="@{/js/jquery. fancybox.min.js}"></script>
+  <script th:src="@{/js/jquery.sticky.js}"></script>
+
+  
+  <script th:src="@{/js/main.js}"></script>
+  
+  
+  
+  
+    
+  </body>
+</html>
