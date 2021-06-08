@@ -27,16 +27,17 @@ public class MailServiceImpl implements MailService {
         body.append("Greetings "+username+" :");
         body.append("\n \n STUDY WARE is happy to welcome you. \n\n ");
         body.append("The test results for the test :"+testname+" is "+marks);
-        body.append(".\n We are happy to Inform you that");
-        body.append("Classes for 10th,11th,12th for all subject intergated with coaching for Neet and CA Foundation,so you are not needed to spend your valuable time on  attending seperate classes"
-        		+ " for special coachings" + 
+        body.append(".\n We are happy to Inform you that\n");
+        body.append("Classes for 10th,11th,12th for all subject intergated with coaching for Neet and CA Foundation."
+                        +"\n So you are not needed to spend your valuable time on  attending seperate classes and "
+        		+ " for special coachings. \n" + 
         		 
         		"Classes are taken by interactive engineers and professional accountants to make a class in conceptual and experimental way\r\n" + 
         		"" + 
         		"Classes are also taken for engineering subjects  and accountancy \r\n" + 
         		"");
         body.append("\n \nFor Further Details Please contact us in the below address: \n");
-        body.append("\nContact us:\n Sabarish :"+ "88389 20026 "+"97899 04992\r\n" );
+        body.append("\nContact us:\n Studyware :"+ "8939464653 "+"97899 04992\r\n" );
         body.append("\n\n\n Thanks & Regards \n STUDY WARE\n36/1 Sachidhanandhamstreet,\r\n" + 
         		"Kosapet,\r\n" + 
         		"Purasaiwalkam,\r\n" + 
